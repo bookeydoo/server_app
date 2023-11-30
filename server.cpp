@@ -18,16 +18,13 @@ using boost::asio::ip::tcp;
 		void sendata(tcp::socket& socket, const std::string& message){
 			boost::asio::write(socket,boost::asio::buffer(message+"\n"));
 		}
-		
 
 
-		
 		using namespace boost::asio ;
 
 		int main(int argc, char* argv) {
 			try
 			{
-
 				
 				boost::asio::io_service Iostart;
 
