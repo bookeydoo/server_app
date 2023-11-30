@@ -4,7 +4,7 @@ To be able to run the codes you would need to get to include the boost asio in y
 
 To include Boost libraries in your C++ application using g++, you need to specify the path to the Boost header files and libraries during the compilation and linking process123. Here’s a basic example:
 
-g++ -I /path/to/boost main.cpp -o main -L /path/to/boost/asio -lboost_system
+```g++ -I /path/to/boost main.cpp -o main -L /path/to/boost/asio -lboost_system```
 
 If you are using an ide like clion and visual studio , you would just need to include the location of the installation of boost in your system in the project properties.
 
