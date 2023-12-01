@@ -8,3 +8,26 @@ To include Boost libraries in your C++ application using g++, you need to specif
 
 If you are using an ide like clion and visual studio , you would just need to include the location of the installation of boost in your system in the project properties.
 
+If you are planning on using cmake you can use this command to include the boost library:
+
+ ```cmake_minimum_required(VERSION 3.12)
+project(YourProjectName)
+
+# Set the C++ standard
+set(CMAKE_CXX_STANDARD 11)
+
+# Find Boost
+find_package(Boost REQUIRED COMPONENTS your_boost_libraries)
+
+# Add your source files
+add_executable(YourExecutable main.cpp)
+
+# Include Boost headers
+target_include_directories(YourExecutable PRIVATE ${Boost_INCLUDE_DIRS})
+
+# Link against Boost libraries
+target_link_libraries(YourExecutable PRIVATE ${Boost_LIBRARIES})
+
+# Set compiler options for GCC
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+    target_compile_options(YourExecutable PRIVATE -Wall -Wextra -Wpedantic)```
